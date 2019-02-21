@@ -31,7 +31,23 @@ class FlyingHero extends SuperHero {
     fly (message:string) {
         console.log(message);
     }
+
+    createMessage() { //overrides super class method
+        return `Flying Hero: 
+        ${this.name} 
+        ${Editor[this.editor]} 
+        ${this.creationYear}`
+    }
 }
+
+//abstract classes lets us define our data and some of our behavior
+//not concrete definition of behavior
+
+abstract class NakedHero extends SuperHero {
+    abstract createMessage():string;
+    //subclass must inherit createMessage() method
+}
+
 
 //implicitly has a constructor
 const greenLantern = new FlyingHero('Silver Age Green Lantern', Editor.DC, 1959);
