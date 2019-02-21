@@ -7,9 +7,9 @@ enum Editor {
 class SuperHero {
     //implicitly add these three properties
     constructor (
-        public name: string,
-        public editor: Editor,
-        public creationYear: number
+        public name: string, //private are not visible to subclasses or outside world
+        public editor: Editor, //protected are visible only to subclasses
+        public creationYear: number //can be private, protected or readonly
     ) {
         //there is no such thing as a runtime private variable
         //at runtime everything is accessible
