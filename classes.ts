@@ -4,16 +4,11 @@ enum Editor {
 }
 
 class SuperHero {
-    name: string;
-    editor: Editor;
-    creationYear: number;
+    //implicitly add these three properties
+    constructor(public name: string,
+    public editor: Editor,
+    public creationYear: number) {
 
-    constructor(name: string,
-    editor: Editor,
-    creationYear: number) {
-        this.name = name;
-        this.editor = editor;
-        this.creationYear = creationYear
     }
 }
 

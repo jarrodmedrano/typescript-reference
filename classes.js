@@ -5,6 +5,7 @@ var Editor;
     Editor[Editor["DC"] = 1] = "DC";
 })(Editor || (Editor = {}));
 var SuperHero = /** @class */ (function () {
+    //implicitly add these three properties
     function SuperHero(name, editor, creationYear) {
         this.name = name;
         this.editor = editor;
