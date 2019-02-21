@@ -43,10 +43,36 @@ class FlyingHero extends SuperHero {
 //abstract classes lets us define our data and some of our behavior
 //not concrete definition of behavior
 
-abstract class NakedHero extends SuperHero {
+abstract class NewHero {
+    constructor (
+        public name: string, //private are not visible to subclasses or outside world
+        public _editor: Editor, //protected are visible only to subclasses
+        public creationYear: number //can be private, protected or readonly
+    ) {
+        //there is no such thing as a runtime private variable
+        //at runtime everything is accessible
+        //you can set variable to readonly
+    }
+
     abstract createMessage():string;
     //subclass must inherit createMessage() method
+    get editor():string {
+        return Editor[this._editor];
+    }
+
+    set editor(editorName:string) {
+        this._editor = (<any>Editor)[editorName]; //casting to type any
+    }
+
+    get message() {
+        return `New Hero: 
+        ${this.name} 
+        ${Editor[this._editor]} 
+        ${this.creationYear}`
+    }
 }
+
+//superman.editor = "Marvel";
 
 
 //implicitly has a constructor
